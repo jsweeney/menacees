@@ -43,12 +43,12 @@ class HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      appBar: AppBar(title: Text('Save the endangered pandas...')),
+      appBar: AppBar(title: Text('Menacées!')),
       body: Column(children: [
         Text(''),
-        Text('... and lots of other animals too!'),
+        Text('Trop d\'espèces sont en danger dans le monde!'),
         Text(''),
-        Text('Click the (+) button to save the world.')
+        Text('Appuyer sur le bouton "carte" ci-dessous pour en apprendre plus.')
       ]),
       floatingActionButton: new FloatingActionButton(
         onPressed: _addFavorite,
@@ -63,7 +63,7 @@ class HomePageState extends State<HomePage> {
     mapView.show(
         new MapOptions(
             showUserLocation: true,
-            title: "Find endangered species!",
+            title: "Trouvez les espèces en danger!",
             initialCameraPosition:
                 new CameraPosition(new Location(0.000, -64.225), 1.0)),
 //                new CameraPosition(new Location(48.471031, -64.225), 11.0)),
