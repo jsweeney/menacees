@@ -17,6 +17,12 @@ class HomePageState extends State<HomePage> {
       "TEST", "Save the gannets bro!", 48.494843, -64.145990,
       markerIcon: gannetMarkerIcon);
 
+  static final MarkerIcon dholeMarkerIcon =
+      new MarkerIcon('assets/markers/dhole-icon.png', width: 64.0, height: 64.0);
+  static final Marker dholeMarker = new Marker(
+      "TEST", "Save the dhole bro!", 21.545191, 79.773318,
+      markerIcon: dholeMarkerIcon);
+
   static final MarkerIcon rhinoJavaMarkerIcon =
       new MarkerIcon('assets/markers/rhino-java-icon.png', width: 64.0, height: 64.0);
   static final Marker rhinoJavaMarker = new Marker(
@@ -77,6 +83,7 @@ class HomePageState extends State<HomePage> {
     // //2. Listen for the onMapReady
     mapView.onMapReady.listen((_) {
       mapView.addMarker(gannetMarker);
+      mapView.addMarker(dholeMarker);
       mapView.addMarker(rhinoJavaMarker);
     });
     // var sub = mapView.onMapReady.listen((_) => _updateRestaurantsAroundUser());
