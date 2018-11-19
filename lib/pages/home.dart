@@ -14,19 +14,19 @@ class HomePageState extends State<HomePage> {
   static final MarkerIcon gannetMarkerIcon =
       new MarkerIcon('assets/markers/bird-icon.png', width: 64.0, height: 64.0);
   static final Marker gannetMarker = new Marker(
-      "TEST", "Save the gannets bro!", 48.494843, -64.145990,
+      "gannet", "Save the gannets bro!", 48.494843, -64.145990,
       markerIcon: gannetMarkerIcon);
 
   static final MarkerIcon dholeMarkerIcon =
       new MarkerIcon('assets/markers/dhole-icon.png', width: 64.0, height: 64.0);
   static final Marker dholeMarker = new Marker(
-      "TEST", "Save the dhole bro!", 21.545191, 79.773318,
+      "dhole", "Save the dhole bro!", 21.545191, 79.773318,
       markerIcon: dholeMarkerIcon);
 
   static final MarkerIcon rhinoJavaMarkerIcon =
       new MarkerIcon('assets/markers/rhino-java-icon.png', width: 64.0, height: 64.0);
   static final Marker rhinoJavaMarker = new Marker(
-      "Rhino Java", "Save the rhino bro!", -6.78602,	105.36108,
+      "rhino-java", "Save the rhino bro!", -6.78602,	105.36108,
       markerIcon: rhinoJavaMarkerIcon);
 
 
