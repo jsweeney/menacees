@@ -112,11 +112,11 @@ class HomePageState extends State<HomePage> {
     // //2. Listen for the onMapReady
     mapView.onMapReady.listen((_) {
       mapView.addMarker(gannetMarker);
+      mapView.addMarker(dholeMarker);
       mapView.addMarker(martreMarker);
       mapView.addMarker(belugaMarker);
       mapView.addMarker(albatrosMarker);
       mapView.addMarker(okapiMarker);
-      mapView.addMarker(dholeMarker);
       mapView.addMarker(rhinoJavaMarker);
       mapView.addMarker(loutreMarker);
 
