@@ -42,6 +42,10 @@ flutter:
   assets:
    - assets/markers/bird-icon.png
    - assets/markers/dhole-icon.png
+   - assets/markers/martre-icon.png
+   - assets/markers/beluga-icon.png
+   - assets/markers/albatros-icon.png
+   - assets/markers/okapi-icon.png
    - assets/markers/rhino-java-icon.png
    - assets/markers/loutre-icon.png
 

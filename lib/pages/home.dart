@@ -23,6 +23,30 @@ class HomePageState extends State<HomePage> {
       "dhole", "Sauvez les dholes !", 21.545191, 79.773318,
       markerIcon: dholeMarkerIcon);
 
+  static final MarkerIcon martreMarkerIcon =
+      new MarkerIcon('assets/markers/martre-icon.png', width: 64.0, height: 64.0);
+  static final Marker martreMarker = new Marker(
+      "martre", "Sauvons les martres d'Amérique !", 48.611856, -57.834332,
+      markerIcon: martreMarkerIcon);
+
+  static final MarkerIcon belugaMarkerIcon =
+      new MarkerIcon('assets/markers/beluga-icon.png', width: 64.0, height: 64.0);
+  static final Marker belugaMarker = new Marker(
+      "beluga", "Sauvons les bélugas du Saint-Laurent !", 45.307874, -74.010008,
+      markerIcon: belugaMarkerIcon);
+
+  static final MarkerIcon albatrosMarkerIcon =
+      new MarkerIcon('assets/markers/albatros-icon.png', width: 64.0, height: 64.0);
+  static final Marker albatrosMarker = new Marker(
+      "albatros", "Sauvons les albatros du Galapagos !", -0.855258, -90.681172,
+      markerIcon: albatrosMarkerIcon);
+
+  static final MarkerIcon okapiMarkerIcon =
+      new MarkerIcon('assets/markers/okapi-icon.png', width: 64.0, height: 64.0);
+  static final Marker okapiMarker = new Marker(
+      "okapi", "Sauvons les okapis !", 1.771273, 29.435216,
+      markerIcon: okapiMarkerIcon);
+
   static final MarkerIcon rhinoJavaMarkerIcon =
       new MarkerIcon('assets/markers/rhino-java-icon.png', width: 64.0, height: 64.0);
   static final Marker rhinoJavaMarker = new Marker(
@@ -88,6 +112,10 @@ class HomePageState extends State<HomePage> {
     // //2. Listen for the onMapReady
     mapView.onMapReady.listen((_) {
       mapView.addMarker(gannetMarker);
+      mapView.addMarker(martreMarker);
+      mapView.addMarker(belugaMarker);
+      mapView.addMarker(albatrosMarker);
+      mapView.addMarker(okapiMarker);
       mapView.addMarker(dholeMarker);
       mapView.addMarker(rhinoJavaMarker);
       mapView.addMarker(loutreMarker);
