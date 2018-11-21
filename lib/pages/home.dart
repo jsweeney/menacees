@@ -20,15 +20,20 @@ class HomePageState extends State<HomePage> {
   static final MarkerIcon dholeMarkerIcon =
       new MarkerIcon('assets/markers/dhole-icon.png', width: 64.0, height: 64.0);
   static final Marker dholeMarker = new Marker(
-      "dhole", "Save the dhole bro!", 21.545191, 79.773318,
+      "dhole", "Sauvez les dholes !", 21.545191, 79.773318,
       markerIcon: dholeMarkerIcon);
 
   static final MarkerIcon rhinoJavaMarkerIcon =
       new MarkerIcon('assets/markers/rhino-java-icon.png', width: 64.0, height: 64.0);
   static final Marker rhinoJavaMarker = new Marker(
-      "rhino-java", "Save the rhino bro!", -6.78602,	105.36108,
+      "rhino-java", "Sauvez les rhinos de Java !", -6.78602,	105.36108,
       markerIcon: rhinoJavaMarkerIcon);
 
+ static final MarkerIcon loutreMarkerIcon =
+      new MarkerIcon('assets/markers/loutre-icon.png', width: 64.0, height: 64.0);
+  static final Marker loutreMarker = new Marker(
+      "loutre", "Sauvez les loutres de Californie !", 35.343647, -124.148841,
+      markerIcon: loutreMarkerIcon);
 
   static const CLOSE_ACTION = 1;
 
@@ -85,6 +90,8 @@ class HomePageState extends State<HomePage> {
       mapView.addMarker(gannetMarker);
       mapView.addMarker(dholeMarker);
       mapView.addMarker(rhinoJavaMarker);
+      mapView.addMarker(loutreMarker);
+
     });
     // var sub = mapView.onMapReady.listen((_) => _updateRestaurantsAroundUser());
     // compositeSubscription.add(sub);
