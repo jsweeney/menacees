@@ -11,12 +11,6 @@ class HomePage extends StatefulWidget {
 class HomePageState extends State<HomePage> {
   final MapView mapView = new MapView();
 
-  static final MarkerIcon gannetMarkerIcon =
-      new MarkerIcon('assets/markers/bird-icon.png', width: 64.0, height: 64.0);
-  static final Marker gannetMarker = new Marker(
-      "gannet", "Save the gannets bro!", 48.494843, -64.145990,
-      markerIcon: gannetMarkerIcon);
-
   static final MarkerIcon dholeMarkerIcon =
       new MarkerIcon('assets/markers/dhole-icon.png', width: 64.0, height: 64.0);
   static final Marker dholeMarker = new Marker(
@@ -111,11 +105,9 @@ class HomePageState extends State<HomePage> {
 
     // //2. Listen for the onMapReady
     mapView.onMapReady.listen((_) {
-      mapView.addMarker(gannetMarker);
       mapView.addMarker(dholeMarker);
       mapView.addMarker(martreMarker);
       mapView.addMarker(belugaMarker);
-      mapView.addMarker(albatrosMarker);
       mapView.addMarker(okapiMarker);
       mapView.addMarker(rhinoJavaMarker);
       mapView.addMarker(loutreMarker);
