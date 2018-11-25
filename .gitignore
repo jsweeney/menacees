@@ -89,5 +89,4 @@ unlinked_spec.ds
 
 # I really don't want build files
 
-build/*.*
-build/**/*.*
+build/
