@@ -11,17 +11,11 @@ class HomePage extends StatefulWidget {
 class HomePageState extends State<HomePage> {
   final MapView mapView = new MapView();
 
-  static final MarkerIcon dholeMarkerIcon =
-      new MarkerIcon('assets/markers/dhole-icon.png', width: 64.0, height: 64.0);
-  static final Marker dholeMarker = new Marker(
-      "dhole", "Sauvez les dholes !", 21.545191, 79.773318,
-      markerIcon: dholeMarkerIcon);
-
-  static final MarkerIcon martreMarkerIcon =
-      new MarkerIcon('assets/markers/martre-icon.png', width: 64.0, height: 64.0);
-  static final Marker martreMarker = new Marker(
-      "martre", "Sauvons les martres d'Amérique !", 48.611856, -57.834332,
-      markerIcon: martreMarkerIcon);
+  static final MarkerIcon albatrosMarkerIcon =
+      new MarkerIcon('assets/markers/albatros-icon.png', width: 64.0, height: 64.0);
+  static final Marker albatrosMarker = new Marker(
+      "albatros", "Sauvons les albatros du Galapagos !", 0.037298, -90.497785,
+      markerIcon: albatrosMarkerIcon);
 
   static final MarkerIcon belugaMarkerIcon =
       new MarkerIcon('assets/markers/beluga-icon.png', width: 64.0, height: 64.0);
@@ -29,11 +23,23 @@ class HomePageState extends State<HomePage> {
       "beluga", "Sauvons les bélugas du Saint-Laurent !", 45.307874, -74.010008,
       markerIcon: belugaMarkerIcon);
 
-  static final MarkerIcon albatrosMarkerIcon =
-      new MarkerIcon('assets/markers/albatros-icon.png', width: 64.0, height: 64.0);
-  static final Marker albatrosMarker = new Marker(
-      "albatros", "Sauvons les albatros du Galapagos !", -0.855258, -90.681172,
-      markerIcon: albatrosMarkerIcon);
+  static final MarkerIcon dholeMarkerIcon =
+      new MarkerIcon('assets/markers/dhole-icon.png', width: 64.0, height: 64.0);
+  static final Marker dholeMarker = new Marker(
+      "dhole", "Sauvez les dholes !", 21.545191, 79.773318,
+      markerIcon: dholeMarkerIcon);
+
+ static final MarkerIcon loutreMarkerIcon =
+      new MarkerIcon('assets/markers/loutre-icon.png', width: 64.0, height: 64.0);
+  static final Marker loutreMarker = new Marker(
+      "loutre", "Sauvez les loutres de Californie !", 35.343647, -124.148841,
+      markerIcon: loutreMarkerIcon);
+
+  static final MarkerIcon martreMarkerIcon =
+      new MarkerIcon('assets/markers/martre-icon.png', width: 64.0, height: 64.0);
+  static final Marker martreMarker = new Marker(
+      "martre", "Sauvons les martres d'Amérique !", 48.611856, -57.834332,
+      markerIcon: martreMarkerIcon);
 
   static final MarkerIcon okapiMarkerIcon =
       new MarkerIcon('assets/markers/okapi-icon.png', width: 64.0, height: 64.0);
@@ -46,12 +52,6 @@ class HomePageState extends State<HomePage> {
   static final Marker rhinoJavaMarker = new Marker(
       "rhino-java", "Sauvez les rhinos de Java !", -6.78602,	105.36108,
       markerIcon: rhinoJavaMarkerIcon);
-
- static final MarkerIcon loutreMarkerIcon =
-      new MarkerIcon('assets/markers/loutre-icon.png', width: 64.0, height: 64.0);
-  static final Marker loutreMarker = new Marker(
-      "loutre", "Sauvez les loutres de Californie !", 35.343647, -124.148841,
-      markerIcon: loutreMarkerIcon);
 
   static const CLOSE_ACTION = 1;
 
@@ -105,13 +105,13 @@ class HomePageState extends State<HomePage> {
 
     // //2. Listen for the onMapReady
     mapView.onMapReady.listen((_) {
-      mapView.addMarker(dholeMarker);
-      mapView.addMarker(martreMarker);
+      mapView.addMarker(albatrosMarker);
       mapView.addMarker(belugaMarker);
+      mapView.addMarker(dholeMarker);
+      mapView.addMarker(loutreMarker);
+      mapView.addMarker(martreMarker);
       mapView.addMarker(okapiMarker);
       mapView.addMarker(rhinoJavaMarker);
-      mapView.addMarker(loutreMarker);
-
     });
     // var sub = mapView.onMapReady.listen((_) => _updateRestaurantsAroundUser());
     // compositeSubscription.add(sub);
