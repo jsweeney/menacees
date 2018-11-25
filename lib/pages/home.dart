@@ -63,10 +63,10 @@ class HomePageState extends State<HomePage> {
           children: <Widget>[
             AppBar(
               automaticallyImplyLeading: false,
-              title: Text('Choose'),
+              title: Text('Encore plus'),
             ),
             ListTile(
-              title: Text('Learn more...'),
+              title: Text('D\'autres informations très bientôt...'),
               onTap: () {},
             )
           ],
@@ -77,7 +77,11 @@ class HomePageState extends State<HomePage> {
         Text(''),
         Text('Trop d\'espèces sont en danger dans le monde!'),
         Text(''),
-        Text('Appuyer sur le bouton "carte" ci-dessous pour en apprendre plus.')
+        Container(
+          margin: const EdgeInsets.all(15.0),
+          padding: const EdgeInsets.all(3.0),
+          child: new Text('Appuyer sur le bouton "carte" ci-dessous pour en apprendre plus.'),
+        )
       ]),
       floatingActionButton: new FloatingActionButton(
         onPressed: _addFavorite,
@@ -100,7 +104,7 @@ class HomePageState extends State<HomePage> {
 
                 
         toolbarActions: <ToolbarAction>[
-          new ToolbarAction("Close", CLOSE_ACTION)
+          new ToolbarAction("Fermer", CLOSE_ACTION)
         ]);
 
     // //2. Listen for the onMapReady
