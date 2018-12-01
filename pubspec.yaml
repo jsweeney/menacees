@@ -43,12 +43,12 @@ flutter:
   assets:
    - assets/data/species.csv
    - assets/markers/dhole-icon.png
-   - assets/markers/martre-icon.png
-   - assets/markers/beluga-icon.png
-   - assets/markers/albatros-icon.png
+   - assets/markers/martre-amerique-icon.png
+   - assets/markers/beluga-saint-laurent-icon.png
+   - assets/markers/albatros-galapagos-icon.png
    - assets/markers/okapi-icon.png
    - assets/markers/rhino-java-icon.png
-   - assets/markers/loutre-icon.png
+   - assets/markers/loutre-cali-icon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.

@@ -37,53 +37,53 @@ class HomePageState extends State<HomePage> {
   static final Marker albatrosMarker =
       MapViewHelper.createMapMarker(testSpecies);
 
-  static final MarkerIcon belugaMarkerIcon = new MarkerIcon(
-      'assets/markers/beluga-icon.png',
-      width: 64.0,
-      height: 64.0);
-  static final Marker belugaMarker = new Marker(
-      "beluga", "Sauvons les bélugas du Saint-Laurent !", 45.307874, -74.010008,
-      markerIcon: belugaMarkerIcon);
+  // static final MarkerIcon belugaMarkerIcon = new MarkerIcon(
+  //     'assets/markers/beluga-icon.png',
+  //     width: 64.0,
+  //     height: 64.0);
+  // static final Marker belugaMarker = new Marker(
+  //     "beluga", "Sauvons les bélugas du Saint-Laurent !", 45.307874, -74.010008,
+  //     markerIcon: belugaMarkerIcon);
 
-  static final MarkerIcon dholeMarkerIcon = new MarkerIcon(
-      'assets/markers/dhole-icon.png',
-      width: 64.0,
-      height: 64.0);
-  static final Marker dholeMarker = new Marker(
-      "dhole", "Sauvez les dholes !", 21.545191, 79.773318,
-      markerIcon: dholeMarkerIcon);
+  // static final MarkerIcon dholeMarkerIcon = new MarkerIcon(
+  //     'assets/markers/dhole-icon.png',
+  //     width: 64.0,
+  //     height: 64.0);
+  // static final Marker dholeMarker = new Marker(
+  //     "dhole", "Sauvez les dholes !", 21.545191, 79.773318,
+  //     markerIcon: dholeMarkerIcon);
 
-  static final MarkerIcon loutreMarkerIcon = new MarkerIcon(
-      'assets/markers/loutre-icon.png',
-      width: 64.0,
-      height: 64.0);
-  static final Marker loutreMarker = new Marker(
-      "loutre", "Sauvez les loutres de Californie !", 35.343647, -124.148841,
-      markerIcon: loutreMarkerIcon);
+  // static final MarkerIcon loutreMarkerIcon = new MarkerIcon(
+  //     'assets/markers/loutre-icon.png',
+  //     width: 64.0,
+  //     height: 64.0);
+  // static final Marker loutreMarker = new Marker(
+  //     "loutre", "Sauvez les loutres de Californie !", 35.343647, -124.148841,
+  //     markerIcon: loutreMarkerIcon);
 
-  static final MarkerIcon martreMarkerIcon = new MarkerIcon(
-      'assets/markers/martre-icon.png',
-      width: 64.0,
-      height: 64.0);
-  static final Marker martreMarker = new Marker(
-      "martre", "Sauvons les martres d'Amérique !", 48.611856, -57.834332,
-      markerIcon: martreMarkerIcon);
+  // static final MarkerIcon martreMarkerIcon = new MarkerIcon(
+  //     'assets/markers/martre-icon.png',
+  //     width: 64.0,
+  //     height: 64.0);
+  // static final Marker martreMarker = new Marker(
+  //     "martre", "Sauvons les martres d'Amérique !", 48.611856, -57.834332,
+  //     markerIcon: martreMarkerIcon);
 
-  static final MarkerIcon okapiMarkerIcon = new MarkerIcon(
-      'assets/markers/okapi-icon.png',
-      width: 64.0,
-      height: 64.0);
-  static final Marker okapiMarker = new Marker(
-      "okapi", "Sauvons les okapis !", 1.771273, 29.435216,
-      markerIcon: okapiMarkerIcon);
+  // static final MarkerIcon okapiMarkerIcon = new MarkerIcon(
+  //     'assets/markers/okapi-icon.png',
+  //     width: 64.0,
+  //     height: 64.0);
+  // static final Marker okapiMarker = new Marker(
+  //     "okapi", "Sauvons les okapis !", 1.771273, 29.435216,
+  //     markerIcon: okapiMarkerIcon);
 
-  static final MarkerIcon rhinoJavaMarkerIcon = new MarkerIcon(
-      'assets/markers/rhino-java-icon.png',
-      width: 64.0,
-      height: 64.0);
-  static final Marker rhinoJavaMarker = new Marker(
-      "rhino-java", "Sauvez les rhinos de Java !", -6.78602, 105.36108,
-      markerIcon: rhinoJavaMarkerIcon);
+  // static final MarkerIcon rhinoJavaMarkerIcon = new MarkerIcon(
+  //     'assets/markers/rhino-java-icon.png',
+  //     width: 64.0,
+  //     height: 64.0);
+  // static final Marker rhinoJavaMarker = new Marker(
+  //     "rhino-java", "Sauvez les rhinos de Java !", -6.78602, 105.36108,
+  //     markerIcon: rhinoJavaMarkerIcon);
 
   static const CLOSE_ACTION = 1;
 
@@ -93,27 +93,27 @@ class HomePageState extends State<HomePage> {
         DefaultAssetBundle.of(context).loadString('assets/data/species.csv');
     data.then((value) {
       print(value);
-      List<List<dynamic>> speciesData = CsvToListConverter(eol: '\n').convert(value);
-      print(speciesData.length);
+      List<List<dynamic>> speciesData = CsvToListConverter(textDelimiter: '\"', eol: '\n').convert(value);
       print(speciesData);
+      print(speciesData.length);
       speciesData.removeAt(0);
       print("After");
-      print(speciesData);
+      // print(speciesData);
       speciesData.forEach((speciesDatum) {
 Species species = Species(
     id: speciesDatum[0],
     name: speciesDatum[1],
     description: speciesDatum[2],
     callout: speciesDatum[3],
-    imagePath: speciesDatum[4],
+    imagePath: 'assets/markers/${speciesDatum[4]}',
     location: LocationData(latitude: speciesDatum[5], longitude: speciesDatum[6]),
   );
-  print(species);
-  print(species.imagePath);
-  print(species.name);
-  print('++${species.imagePath}++');
-  print(species.location.latitude);
-  print(species.location.longitude);
+  // print(species);
+  // print(species.imagePath);
+  // print(species.name);
+  // print('++${species.imagePath}++');
+  // print(species.location.latitude);
+  // print(species.location.longitude);
 
 
 Species patateSpecies = Species(
@@ -136,8 +136,8 @@ Species patateSpecies = Species(
 
   markers.add(MapViewHelper.createMapMarker(species));
       });
-      markers.add(rhinoJavaMarker);
-      markers.add(martreMarker);
+      //markers.add(rhinoJavaMarker);
+      //markers.add(martreMarker);
     });
 
     // markers.add(albatrosMarker);
