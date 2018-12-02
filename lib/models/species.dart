@@ -9,10 +9,12 @@ class Species {
   final String callout;
   final String imagePath;
   final LocationData location;
-  final String remaining;
+  final int remaining;
   final String habitat;
   final String eating;
   final String reproduction;
+  final int gestation;
+  final String litter;
   final String lifeExpectancy;
   final String danger;
   final String funFacts;
@@ -30,6 +32,8 @@ class Species {
       @required this.habitat,
       @required this.eating,
       @required this.reproduction,
+      @required this.gestation,
+      @required this.litter,
       @required this.lifeExpectancy,
       @required this.danger,
       @required this.funFacts,

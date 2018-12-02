@@ -25,14 +25,9 @@ class HomePageState extends State<HomePage> {
     Future<String> data =
         DefaultAssetBundle.of(context).loadString('assets/data/species.csv');
     data.then((value) {
-      print(value);
       List<List<dynamic>> speciesData =
           CsvToListConverter(textDelimiter: '\"', eol: '\n').convert(value);
-      print(speciesData.length);
       speciesData.removeAt(0);
-      print("After");
-
-      speciesData.forEach((speciesDatum) => print('${speciesDatum[0]} / ${speciesDatum[5]} : ${speciesDatum[6]} / ${speciesDatum[4]}'));
 
       speciesData.forEach((speciesDatum) {
         Species species = Species(
@@ -47,16 +42,16 @@ class HomePageState extends State<HomePage> {
           habitat: speciesDatum[8],
           eating: speciesDatum[9],
           reproduction: speciesDatum[10],
-          lifeExpectancy: speciesDatum[11],
-          danger: speciesDatum[12],
-          funFacts: speciesDatum[13],
-          organizations: speciesDatum[14],
+          gestation: speciesDatum[11],
+          litter: speciesDatum[12],
+          lifeExpectancy: speciesDatum[13],
+          danger: speciesDatum[14],
+          funFacts: speciesDatum[15],
+          organizations: speciesDatum[16],
         );
         speciesMap[species.id] = species;
       });
     });
-
-    speciesMap.forEach((id, species) => print('$id - ${species.imagePath}'));
 
     super.initState();
   }
@@ -73,42 +68,59 @@ class HomePageState extends State<HomePage> {
           children: <Widget>[
             AppBar(
               automaticallyImplyLeading: false,
-              title: Text('Encore plus'),
+              title: Text('Quelques mots sur moi...'),
             ),
-            ListTile(
-              title: Text('D\'autres informations très bientôt...'),
-              onTap: () {},
+            Container(
+              child: Column(children: <Widget>[
+                Text(
+                    'Mon nom est Rachel Sweeney et je suis dans le programme PEI en secondaire 5.',
+                    style: TextStyle(fontSize: 16)),
+                Text(''),
+                Text(
+                    'Pour mon projet personnel cette année, j’ai décidé de développer cette application pour vous informer sur les espèces en voie d’extinction.',
+                    style: TextStyle(fontSize: 16)),
+                Text(''),
+                Text('J’espère que vous allez l’apprécier.  Merci!',
+                    style: TextStyle(fontSize: 16)),
+              ]),
+              margin: EdgeInsets.all(15),
             )
           ],
         ),
       ),
       appBar: AppBar(title: Text('Menacées!')),
       body: Column(children: [
-        Text(''),
-        Text('Trop d\'espèces sont en danger dans le monde!'),
-        Text(''),
         Container(
           margin: const EdgeInsets.all(15.0),
           padding: const EdgeInsets.all(3.0),
           child: new Text(
-              'Appuyer sur le bouton "carte" ci-dessous pour en apprendre plus.'),
+            'Trop d\'espèces sont en danger dans le monde!',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
+            textAlign: TextAlign.center,
+          ),
         ),
-        FlatButton(
-          child: Text('Montrer une espèce: ${currentSpecies != null ? currentSpecies.name : 'NONE'}'),
-          onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (BuildContext context) =>
-                      SpeciesPage(speciesMap.values.toList()[0]),
-                ),
-              ),
-        )
+        Container(
+          margin: const EdgeInsets.all(15.0),
+          padding: const EdgeInsets.all(3.0),
+          child: new Text(
+            'Nous pouvons tous aider les espèces en voie d’extinction en nous informant plus à leur sujet. Vous allez pouvoir en apprendre davantage sur certaines de celles-ci à l’aide de cette application. Elle inclut une carte qui vous aidera à situer ces espèces ainsi que certaines informations pertinentes à propos d’elles.',
+            style: TextStyle(fontSize: 20),
+          ),
+        ),
+        Container(
+          margin: const EdgeInsets.all(15.0),
+          padding: const EdgeInsets.all(3.0),
+          child: new Text(
+            'Appuyer sur l\'icône "carte" ci-dessous pour en apprendre plus.',
+            style: TextStyle(fontSize: 20),
+          ),
+        ),
       ]),
       floatingActionButton: new FloatingActionButton(
         onPressed: _addFavorite,
         tooltip: 'Add Favorite',
         child: new Icon(Icons.map),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 
@@ -120,9 +132,6 @@ class HomePageState extends State<HomePage> {
             title: "Trouvez les espèces en danger!",
             initialCameraPosition:
                 new CameraPosition(new Location(0.000, -64.225), 1.0)),
-//                new CameraPosition(new Location(48.471031, -64.225), 11.0)),
-//                new CameraPosition(new Location(-6.78602,	105.36108), 11.0)),
-
         toolbarActions: <ToolbarAction>[
           new ToolbarAction("Fermer", CLOSE_ACTION)
         ]);
@@ -144,12 +153,10 @@ class HomePageState extends State<HomePage> {
       }
     });
 
-    mapView.onInfoWindowTapped.listen((marker) {
-      print("onInfoWindowTapped: ${marker.id}");
-    });
-    // compositeSubscription.add(sub);
+    // mapView.onInfoWindowTapped.listen((marker) {
+    // });
+
     mapView.onTouchAnnotation.listen((marker) {
-      print("onTouchAnnotation: ${marker.id}");
       mapView.dismiss();
       Species selectedSpecies = speciesMap[marker.id];
       if (currentSpecies != selectedSpecies) {
@@ -161,6 +168,5 @@ class HomePageState extends State<HomePage> {
             ));
       }
     });
-    // compositeSubscription.add(sub);
   }
 }
