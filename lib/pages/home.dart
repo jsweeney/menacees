@@ -32,10 +32,9 @@ class HomePageState extends State<HomePage> {
       speciesData.removeAt(0);
       print("After");
 
-      speciesData.forEach((speciesDatum) => print('${speciesDatum[0]} - ${speciesDatum[5]} - ${speciesDatum[6]}'));
+      speciesData.forEach((speciesDatum) => print('${speciesDatum[0]} / ${speciesDatum[5]} : ${speciesDatum[6]} / ${speciesDatum[4]}'));
 
       speciesData.forEach((speciesDatum) {
-        print(speciesDatum[0]);
         Species species = Species(
           id: speciesDatum[0],
           name: speciesDatum[1],
