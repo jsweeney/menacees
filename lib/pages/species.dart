@@ -21,7 +21,7 @@ class SpeciesPage extends StatelessWidget {
           appBar: AppBar(
             title: Text(species.name),
           ),
-          body: Text("patate")),
+          body: Text(species.funFacts)),
     );
   }
 }

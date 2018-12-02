@@ -9,6 +9,14 @@ class Species {
   final String callout;
   final String imagePath;
   final LocationData location;
+  final String remaining;
+  final String habitat;
+  final String eating;
+  final String reproduction;
+  final String lifeExpectancy;
+  final String danger;
+  final String funFacts;
+  final String organizations;
   final bool isFavorite;
 
   Species(
@@ -18,5 +26,13 @@ class Species {
       @required this.callout,
       @required this.imagePath,
       @required this.location,
+      @required this.remaining,
+      @required this.habitat,
+      @required this.eating,
+      @required this.reproduction,
+      @required this.lifeExpectancy,
+      @required this.danger,
+      @required this.funFacts,
+      @required this.organizations,
       this.isFavorite = false});
 }
