@@ -42,6 +42,18 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
    - assets/data/species.csv
+   - assets/details/albatros-galapagos-icon.png
+   - assets/details/antilope-saiga-icon.png
+   - assets/details/beluga-saint-laurent-icon.png
+   - assets/details/chabot-tete-courte-icon.png
+   - assets/details/dhole-icon.png
+   - assets/details/loutre-cali-icon.png
+   - assets/details/martre-amerique-icon.png
+   - assets/details/okapi-icon.png
+   - assets/details/rhino-java-icon.png
+   - assets/details/rhino-indian-icon.png
+   - assets/details/tamarin-pinche-icon.png
+   - assets/details/vipere-milos-icon.png
    - assets/markers/albatros-galapagos-icon.png
    - assets/markers/antilope-saiga-icon.png
    - assets/markers/beluga-saint-laurent-icon.png

@@ -5,7 +5,7 @@ import '../models/species.dart';
 class MapViewHelper {
   static Marker createMapMarker(Species species) {
     MarkerIcon markerIcon =
-        new MarkerIcon(species.imagePath, width: 64.0, height: 64.0);
+        new MarkerIcon(species.imagePathMarker, width: 64.0, height: 64.0);
     Marker marker = new Marker(species.id, species.callout,
         species.location.latitude, species.location.longitude,
         markerIcon: markerIcon);

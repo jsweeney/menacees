@@ -53,7 +53,7 @@ class SpeciesPage extends StatelessWidget {
                 Container(
                     margin: EdgeInsets.all(10),
                     child: Image(
-                        image: AssetImage(species.imagePath),
+                        image: AssetImage(species.imagePathDetail),
                         height: 120,
                         width: 120)),
               ]),

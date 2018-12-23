@@ -7,7 +7,8 @@ class Species {
   final String name;
   final String description;
   final String callout;
-  final String imagePath;
+  final String imagePathMarker;
+  final String imagePathDetail;
   final LocationData location;
   final int remaining;
   final String habitat;
@@ -26,7 +27,8 @@ class Species {
       @required this.name,
       @required this.description,
       @required this.callout,
-      @required this.imagePath,
+      @required this.imagePathMarker,
+      @required this.imagePathDetail,
       @required this.location,
       @required this.remaining,
       @required this.habitat,

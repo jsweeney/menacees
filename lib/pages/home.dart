@@ -35,7 +35,8 @@ class HomePageState extends State<HomePage> {
           name: speciesDatum[1],
           description: speciesDatum[2],
           callout: speciesDatum[3],
-          imagePath: 'assets/markers/${speciesDatum[4]}',
+          imagePathMarker: 'assets/markers/${speciesDatum[4]}',
+          imagePathDetail: 'assets/details/${speciesDatum[4]}',
           location: LocationData(
               latitude: speciesDatum[5], longitude: speciesDatum[6]),
           remaining: speciesDatum[7],
