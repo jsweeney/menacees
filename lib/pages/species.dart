@@ -51,11 +51,11 @@ class SpeciesPage extends StatelessWidget {
                       ]),
                     ]),
                 Container(
-                    margin: EdgeInsets.all(10),
+                    margin: EdgeInsets.all(30),
                     child: Image(
                         image: AssetImage(species.imagePathDetail),
-                        height: 120,
-                        width: 120)),
+                        height: 125,
+                        width: 125)),
               ]),
               Text('Habitat',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
